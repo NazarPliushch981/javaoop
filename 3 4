@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <script>
+        class Circle {
+            constructor(r) { this.radius = r; }
+            get r() { return this.radius; }
+            set r(value) { this.radius = value; }
+            get d() { return this.radius * 2; }
+            calcArea() { return Math.PI * this.radius * this.radius; }
+            calcLength() { return 2 * Math.PI * this.radius; }
+        }
+
+        class HtmlElement {
+            constructor(tagName, isSelfClosing = false, textContent = "") {
+                this.tagName = tagName;
+                this.isSelfClosing = isSelfClosing;
+                this.textContent = textContent;
+                this.attributes = [];
+                this.styles = [];
+                this.children = [];
+            }
+            setAttribute(name, value) { this.attributes.push({ name, value }); }
+            setStyle(name, value) { this.styles.push({ name, value }); }
+            appendChild(element) { this.children.push(element); }
+            prependChild(

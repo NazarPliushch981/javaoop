@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 1</title>
+</head>
+<body>
+
+    <script>
+        class Circle {
+            constructor(radius) {
+                this._radius = radius;
+            }
+
+            get radius() {
+                return this._radius;
+            }
+
+            set radius(value) {
+                this._radius = value;
+            }
+
+            get diameter() {
+                return this._radius * 2;
+            }
+
+            calcArea() {
+                return Math.PI * this._radius * this._radius;
+            }
+
+            calcLength() {
+                return 2 * Math.PI * this._radius;
+            }
+        }
+
+        let c = new Circle(5);
+        console.log("Радіус:", c.radius);
+        console.log("Діаметр:", c.diameter);
+        console.log("Площа:", c.calcArea().toFixed(2));
+        console.log("Довжина:", c.calcLength().toFixed(2));
+
+        c.radius = 10;
+        console.log("Новий діаметр:", c.diameter);
+    </script>
+    
+</body>
+</html>
